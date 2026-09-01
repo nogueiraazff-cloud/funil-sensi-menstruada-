@@ -1,0 +1,6 @@
+{
+  "name": "NzShot Direct",
+  "description": "Chat interativo estilo Instagram Direct para atendimento, demonstração e ativação da NzShot.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
